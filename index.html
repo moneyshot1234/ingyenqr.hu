@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Kód Generátor</title>
+    <title>EZ QR Code - Ingyenes QR Kód Generátor | Magyar</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ingyenes online QR kód generátor magyarul. Készíts QR kódot URL-hez, szöveghez, e-mailhez, telefonhoz, WiFi-hez. Gyors, egyszerű, letölthető.">
+    <meta name="keywords" content="qr kód, qr generátor, qr készítő, ingyenes qr, magyar qr, qr kód generator, online qr">
+    <meta name="author" content="EZ QR Code">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ezqrcode.hu/">
+    <meta property="og:title" content="EZ QR Code - Ingyenes QR Kód Generátor">
+    <meta property="og:description" content="Készíts QR kódot egyszerűen és gyorsan, teljesen ingyen!">
+    <meta property="og:image" content="https://ezqrcode.hu/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ezqrcode.hu/">
+    <meta property="twitter:title" content="EZ QR Code - Ingyenes QR Kód Generátor">
+    <meta property="twitter:description" content="Készíts QR kódot egyszerűen és gyorsan!">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ezqrcode.hu/">
+    
+    <!-- QRCode.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -12,36 +38,44 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
         }
         
         .container {
+            max-width: 800px;
+            margin: 0 auto;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             padding: 40px;
-            max-width: 600px;
-            width: 100%;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         h1 {
             text-align: center;
-            color: #333;
-            margin-bottom: 30px;
             font-size: 2.5em;
+            margin-bottom: 10px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
-        .form-group {
-            margin-bottom: 20px;
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
         }
         
         label {
@@ -51,39 +85,63 @@
             font-weight: 500;
         }
         
-        select, input[type="text"], textarea {
+        textarea {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: 2px solid #e0e0e0;
             border-radius: 10px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            resize: vertical;
+            min-height: 100px;
+            transition: all 0.3s;
         }
         
-        select:focus, input[type="text"]:focus, textarea:focus {
+        textarea:focus {
             outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+        
+        .type-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .type-btn {
+            padding: 12px;
+            text-align: center;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .type-btn:hover {
+            background: #e9ecef;
+        }
+        
+        .type-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             border-color: #667eea;
         }
         
-        textarea {
-            resize: vertical;
-            min-height: 100px;
+        .type-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
         }
         
-        .help-text {
+        .type-name {
             font-size: 12px;
-            color: #888;
-            margin-top: 5px;
-            display: none;
+            font-weight: 500;
         }
         
-        .help-text.show {
-            display: block;
-        }
-        
-        button {
+        .generate-btn {
             width: 100%;
-            padding: 14px;
+            padding: 18px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
@@ -91,201 +149,252 @@
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 10px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        button:hover {
+        .generate-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
         }
         
-        button:active {
-            transform: translateY(0);
-        }
-        
-        .result {
+        .result-section {
             margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
             text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 15px;
+            display: none;
         }
         
-        .result img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
+        .result-section.show {
+            display: block;
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #qrcode {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
             border-radius: 10px;
+            display: inline-block;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .error {
-            background: #fee;
-            color: #c33;
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .success {
-            background: #efe;
-            color: #3c3;
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
+        #qrcode img {
+            display: block;
         }
         
         .download-btn {
+            padding: 14px 30px;
             background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
-            margin-top: 15px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .feature {
-            text-align: center;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .feature:hover {
-            background: #e9ecef;
-        }
-        
-        .feature.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
         }
         
-        .feature-icon {
-            font-size: 24px;
-            margin-bottom: 5px;
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(86,171,47,0.4);
         }
         
-        .feature-name {
-            font-size: 12px;
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .type-selector {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🔲 QR Kód Generátor</h1>
+        <h1>🔲 EZ QR Code</h1>
+        <p class="subtitle">Ingyenes QR kód generátor - Gyors, egyszerű, magyar</p>
         
-        {% if error %}
-        <div class="error">{{ error }}</div>
-        {% endif %}
-        
-        <form action="/generate" method="post" id="qr-form">
-            <!-- Rejtett mező a QR típushoz -->
-            <input type="hidden" name="qr_type" id="qr_type" value="text">
-            
-            <div class="form-group">
-                <label for="data">Adat:</label>
-                <textarea name="data" id="data" placeholder="Írd be a szöveget, amit QR kóddá szeretnél alakítani..." required>{{ input_data }}</textarea>
-                <div class="help-text" id="help-text"></div>
-            </div>
-            
-            <div class="features">
-                <div class="feature active" onclick="setQuickType('text')">
-                    <div class="feature-icon">📝</div>
-                    <div class="feature-name">Szöveg</div>
-                </div>
-                <div class="feature" onclick="setQuickType('url')">
-                    <div class="feature-icon">🌐</div>
-                    <div class="feature-name">URL</div>
-                </div>
-                <div class="feature" onclick="setQuickType('email')">
-                    <div class="feature-icon">📧</div>
-                    <div class="feature-name">E-mail</div>
-                </div>
-                <div class="feature" onclick="setQuickType('phone')">
-                    <div class="feature-icon">📱</div>
-                    <div class="feature-name">Telefon</div>
-                </div>
-                <div class="feature" onclick="setQuickType('wifi')">
-                    <div class="feature-icon">📶</div>
-                    <div class="feature-name">WiFi</div>
-                </div>
-                <div class="feature" onclick="setQuickType('sms')">
-                    <div class="feature-icon">💬</div>
-                    <div class="feature-name">SMS</div>
-                </div>
-            </div>
-            
-            <button type="submit">QR Kód Generálása</button>
-        </form>
-        
-        {% if qr_code %}
-        <div class="result">
-            <h2>A generált QR kód:</h2>
-            <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
-            <form action="/download" method="post" style="display: inline;">
-                <input type="hidden" name="data" value="{{ input_data }}">
-                <button type="submit" class="download-btn">📥 Letöltés PNG-ként</button>
-            </form>
+        <div class="input-group">
+            <label for="data">Mit szeretnél QR kóddá alakítani?</label>
+            <textarea id="data" placeholder="Írd be az URL-t, szöveget, e-mail címet vagy bármilyen adatot..."></textarea>
         </div>
-        {% endif %}
+        
+        <div class="type-selector">
+            <div class="type-btn active" onclick="selectType('text')">
+                <div class="type-icon">📝</div>
+                <div class="type-name">Szöveg</div>
+            </div>
+            <div class="type-btn" onclick="selectType('url')">
+                <div class="type-icon">🌐</div>
+                <div class="type-name">Weboldal</div>
+            </div>
+            <div class="type-btn" onclick="selectType('email')">
+                <div class="type-icon">📧</div>
+                <div class="type-name">E-mail</div>
+            </div>
+            <div class="type-btn" onclick="selectType('phone')">
+                <div class="type-icon">📱</div>
+                <div class="type-name">Telefon</div>
+            </div>
+            <div class="type-btn" onclick="selectType('wifi')">
+                <div class="type-icon">📶</div>
+                <div class="type-name">WiFi</div>
+            </div>
+            <div class="type-btn" onclick="selectType('sms')">
+                <div class="type-icon">💬</div>
+                <div class="type-name">SMS</div>
+            </div>
+        </div>
+        
+        <button class="generate-btn" onclick="generateQR()">QR Kód Generálása</button>
+        
+        <div id="result" class="result-section">
+            <h2>✨ Kész a QR kódod!</h2>
+            <div id="qrcode"></div>
+            <a id="downloadBtn" class="download-btn" download="qr-code.png">📥 Letöltés PNG-ként</a>
+        </div>
+        
+        <footer>
+            <p>© 2024 EZ QR Code | Ingyenes online QR generátor</p>
+            <p>Készíts QR kódot URL-hez, szöveghez, WiFi-hez és még sok máshoz!</p>
+        </footer>
     </div>
     
     <script>
-        function updatePlaceholder() {
-            const type = document.getElementById('qr_type').value;
-            const dataField = document.getElementById('data');
-            const helpText = document.getElementById('help-text');
+        let currentType = 'text';
+        let qrCode = null;
+        
+        function selectType(type) {
+            currentType = type;
             
-            helpText.classList.remove('show');
+            // Update active button
+            document.querySelectorAll('.type-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.closest('.type-btn').classList.add('active');
             
-            switch(type) {
+            // Update placeholder
+            const textarea = document.getElementById('data');
+            const placeholders = {
+                text: 'Írd be a szöveget...',
+                url: 'https://example.com',
+                email: 'pelda@email.com',
+                phone: '+36301234567',
+                wifi: 'SSID|Jelszó|WPA',
+                sms: '+36301234567|Üzenet szövege'
+            };
+            textarea.placeholder = placeholders[type] || placeholders.text;
+        }
+        
+        function formatData(data) {
+            switch(currentType) {
                 case 'url':
-                    dataField.placeholder = 'Például: www.example.com';
-                    break;
+                    return data.startsWith('http') ? data : 'https://' + data;
                 case 'email':
-                    dataField.placeholder = 'Például: pelda@email.com';
-                    break;
+                    return 'mailto:' + data;
                 case 'phone':
-                    dataField.placeholder = 'Például: +36301234567';
-                    break;
+                    return 'tel:' + data;
                 case 'wifi':
-                    dataField.placeholder = 'SSID|Jelszó|Típus (pl: MyWiFi|password123|WPA)';
-                    helpText.textContent = 'Formátum: SSID|Jelszó|Típus (WPA/WEP/nopass)';
-                    helpText.classList.add('show');
-                    break;
+                    const [ssid, pass, auth = 'WPA'] = data.split('|');
+                    return `WIFI:T:${auth};S:${ssid};P:${pass};;`;
                 case 'sms':
-                    dataField.placeholder = 'Telefonszám|Üzenet (pl: +36301234567|Szia!)';
-                    helpText.textContent = 'Formátum: Telefonszám|Üzenet szövege';
-                    helpText.classList.add('show');
-                    break;
+                    const [number, message = ''] = data.split('|');
+                    return `SMSTO:${number}:${message}`;
                 default:
-                    dataField.placeholder = 'Írd be a szöveget, amit QR kóddá szeretnél alakítani...';
+                    return data;
             }
         }
         
-        function setQuickType(type) {
-            // Beállítjuk a rejtett mező értékét
-            document.getElementById('qr_type').value = type;
+        function generateQR() {
+            const data = document.getElementById('data').value.trim();
             
-            // Frissítjük a placeholder szöveget
-            updatePlaceholder();
+            if (!data) {
+                alert('Kérlek adj meg adatot a QR kód generálásához!');
+                return;
+            }
             
-            // Frissítjük az aktív gomb stílusát
-            document.querySelectorAll('.feature').forEach(f => f.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            const formattedData = formatData(data);
+            
+            // Clear previous QR code
+            document.getElementById('qrcode').innerHTML = '';
+            
+            // Generate new QR code
+            qrCode = new QRCode(document.getElementById('qrcode'), {
+                text: formattedData,
+                width: 256,
+                height: 256,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            // Show result section
+            document.getElementById('result').classList.add('show');
+            
+            // Setup download button
+            setTimeout(() => {
+                const canvas = document.querySelector('#qrcode canvas');
+                if (canvas) {
+                    canvas.toBlob((blob) => {
+                        const url = URL.createObjectURL(blob);
+                        document.getElementById('downloadBtn').href = url;
+                    });
+                }
+            }, 100);
+            
+            // Scroll to result
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         
-        // Inicializálás az oldal betöltésekor
-        updatePlaceholder();
+        // Enter key support
+        document.getElementById('data').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                generateQR();
+            }
+        });
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "EZ QR Code",
+        "description": "Ingyenes online QR kód generátor magyarul",
+        "url": "https://ezqrcode.hu",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "HUF"
+        }
+    }
     </script>
 </body>
 </html>
