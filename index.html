@@ -7,40 +7,21 @@
     
     <!-- Enhanced SEO Meta Tags -->
     <meta name="description" content="⭐ Ingyenes QR kód generátor magyarul. Készíts QR kódot másodpercek alatt: URL, szöveg, WiFi, e-mail, telefon. Letöltés PNG formátumban. Regisztráció nélkül!">
-    <meta name="keywords" content="qr kód generátor, ingyenes qr kód, qr kód készítés, online qr generátor, magyar qr kód, qr code generator hungarian, wifi qr kód, url qr kód, qr kód letöltés">
+    <meta name="keywords" content="qr kód generátor, ingyenes qr kód, qr kód készítés, online qr generátor, magyar qr kód">
     <meta name="author" content="IngyenQR.hu - Magyar QR Kód Generátor">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta name="language" content="hu">
-    <meta name="geo.region" content="HU">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ingyenqr.hu/">
     <meta property="og:title" content="Ingyenes QR Kód Generátor | #1 Magyar QR Készítő">
-    <meta property="og:description" content="Készíts professzionális QR kódot ingyen! URL, WiFi, e-mail, telefon - minden típushoz. Azonnali letöltés PNG-ben.">
-    <meta property="og:image" content="https://ingyenqr.hu/og-image.png">
-    <meta property="og:locale" content="hu_HU">
+    <meta property="og:description" content="Készíts professzionális QR kódot ingyen!">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ingyenqr.hu/">
-    <meta property="twitter:title" content="Ingyenes QR Kód Generátor - Magyar">
-    <meta property="twitter:description" content="Készíts QR kódot ingyen, gyorsan, egyszerűen!">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6527048482135228"
+         crossorigin="anonymous"></script>
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://ingyenqr.hu/">
-    <link rel="alternate" hreflang="hu" href="https://ingyenqr.hu/">
-    
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    
-    <!-- QRCode.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
-    
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB05HQRGJN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -48,6 +29,9 @@
         gtag('js', new Date());
         gtag('config', 'G-NB05HQRGJN');
     </script>
+    
+    <!-- QRCode.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
     
     <style>
         * {
@@ -57,7 +41,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
@@ -72,6 +56,27 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             padding: 40px;
             animation: fadeIn 0.5s ease;
+        }
+        
+        /* Hirdetés konténer */
+        .ad-container {
+            margin: 20px 0;
+            min-height: 100px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .ad-label {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
         }
         
         @keyframes fadeIn {
@@ -225,10 +230,6 @@
             box-shadow: 0 10px 30px rgba(102,126,234,0.4);
         }
         
-        .generate-btn:active {
-            transform: translateY(0);
-        }
-        
         .result-section {
             margin-top: 30px;
             padding-top: 30px;
@@ -291,56 +292,6 @@
             box-shadow: 0 10px 30px rgba(86,171,47,0.4);
         }
         
-        .info-section {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #e0e0e0;
-        }
-        
-        .info-content {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        
-        .info-content ol {
-            margin-left: 20px;
-            color: #555;
-        }
-        
-        .info-content ol li {
-            margin-bottom: 10px;
-        }
-        
-        .faq-section {
-            margin-top: 40px;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
-        
-        .faq-item:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .faq-question {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        
-        .faq-answer {
-            color: #666;
-            line-height: 1.6;
-        }
-        
         footer {
             text-align: center;
             margin-top: 40px;
@@ -350,50 +301,15 @@
             font-size: 14px;
         }
         
-        .breadcrumb {
-            margin-bottom: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .breadcrumb a {
+        footer a {
             color: #667eea;
             text-decoration: none;
         }
         
-        .breadcrumb a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
         
-        /* Loading animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0,0,0,0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Mobile responsiveness */
         @media (max-width: 600px) {
             .container {
                 padding: 25px;
@@ -404,57 +320,32 @@
                 font-size: 2em;
             }
             
-            h2 {
-                font-size: 1.5em;
-            }
-            
             .type-selector {
                 grid-template-columns: repeat(3, 1fr);
             }
             
             .features {
                 grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .generate-btn {
-                font-size: 16px;
-                padding: 15px;
-            }
-        }
-        
-        /* Print styles */
-        @media print {
-            body {
-                background: white;
-            }
-            
-            .container {
-                box-shadow: none;
-                padding: 0;
-            }
-            
-            .generate-btn, .type-selector, .input-group {
-                display: none;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Breadcrumb for SEO -->
-        <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a href="https://ingyenqr.hu" itemprop="item">
-                    <span itemprop="name">Főoldal</span>
-                </a>
-                <meta itemprop="position" content="1" />
-            </span> › 
-            <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">QR Kód Generátor</span>
-                <meta itemprop="position" content="2" />
-            </span>
-        </nav>
+        <!-- Felső banner hirdetés -->
+        <div class="ad-container">
+            <span class="ad-label">Hirdetés</span>
+            <!-- Display Ad - Responsive -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6527048482135228"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
         
         <header>
             <h1>🔲 Ingyenes QR Kód Generátor</h1>
@@ -463,6 +354,11 @@
         
         <!-- Features showcase -->
         <section class="features" aria-label="Szolgáltatások">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Villámgyors</div>
+                <div class="feature-desc">QR kód készítés másodpercek alatt</div>
+            </div>
             <div class="feature">
                 <div class="feature-icon">💰</div>
                 <div class="feature-title">100% Ingyenes</div>
@@ -487,9 +383,7 @@
                     id="data" 
                     placeholder="Írd be az URL-t, szöveget, e-mail címet vagy bármilyen adatot..." 
                     aria-label="QR kód tartalma"
-                    aria-describedby="data-help"
                     required></textarea>
-                <span id="data-help" class="sr-only">Adj meg bármilyen szöveget, URL-t, e-mail címet vagy egyéb adatot, amit QR kóddá szeretnél alakítani</span>
             </div>
             
             <section class="type-selector" role="group" aria-label="QR kód típusok">
@@ -519,6 +413,21 @@
                 </div>
             </section>
             
+            <!-- Középső hirdetés -->
+            <div class="ad-container">
+                <span class="ad-label">Hirdetés</span>
+                <!-- In-article Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-6527048482135228"
+                     data-ad-slot="2345678901"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
             <button class="generate-btn" onclick="generateQR()" aria-label="QR kód generálása">
                 <span id="btn-text">QR Kód Generálása</span>
             </button>
@@ -537,111 +446,23 @@
             </section>
         </main>
         
-        <!-- SEO Content Section -->
-        <section class="info-section">
-            <h2>Mi az a QR kód?</h2>
-            <div class="info-content">
-                A QR kód (Quick Response kód) egy kétdimenziós vonalkód, amely különböző információkat tárolhat. 
-                Eredetileg a japán autóiparban fejlesztették ki 1994-ben a Denso Wave vállalat által, ma már világszerte használják 
-                marketing célokra, kapcsolattartásra, fizetésre és még sok másra. A QR kódok akár 4296 
-                alfanumerikus karaktert is tárolhatnak, így ideálisak URL-ek, szövegek, WiFi jelszavak 
-                és egyéb adatok gyors és egyszerű megosztására. A modern okostelefonok kamerája automatikusan
-                felismeri és beolvassa a QR kódokat, így használatuk rendkívül egyszerű és kényelmes.
-            </div>
-            
-            <h2>Hogyan használd a QR kód generátort?</h2>
-            <div class="info-content">
-                <ol>
-                    <li><strong>Válaszd ki a QR kód típusát:</strong> URL, szöveg, e-mail, telefon, WiFi vagy SMS - minden típushoz optimalizált formátumot biztosítunk</li>
-                    <li><strong>Add meg az adatokat:</strong> Írd be vagy másold be a kívánt tartalmat a szövegmezőbe</li>
-                    <li><strong>Kattints a generálás gombra:</strong> A QR kód azonnal, valós időben készül el a böngésződben</li>
-                    <li><strong>Töltsd le PNG formátumban:</strong> Használd bárhol - nyomtatva, digitálisan, prezentációkban vagy weboldalakon</li>
-                </ol>
-            </div>
-            
-            <h2>Miért válaszd a mi QR generátorunkat?</h2>
-            <div class="info-content">
-                Az ingyenes QR kód generátorunk számos előnnyel rendelkezik a piacon elérhető többi megoldással szemben. 
-                Nincs szükség regisztrációra vagy bejelentkezésre, azonnal használhatod. Korlátlan számú QR kódot készíthetsz 
-                teljesen ingyen, vízjel és reklámok nélkül. A generált QR kódok örökre működnek, nincs lejárati idejük. 
-                Az adataid biztonságban vannak, mivel minden művelet a böngésződben történik, nem töltünk fel semmit szerverekre. 
-                A magyar nyelvű felület egyszerű és intuitív, bárki könnyedén használhatja.
-            </div>
-        </section>
-        
-        <!-- FAQ Section for SEO -->
-        <section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
-            <h2>Gyakran Ismételt Kérdések (GYIK)</h2>
-            
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 class="faq-question" itemprop="name">Tényleg ingyenes a QR kód generátor?</h3>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Igen, a szolgáltatásunk 100% ingyenes. Nincs rejtett költség, nincs előfizetés, nincs regisztráció, 
-                        és korlátlan számú QR kódot készíthetsz. Nem kérünk bankkártya adatokat, és nem küldünk spam üzeneteket.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 class="faq-question" itemprop="name">Milyen formátumban tölthetem le a QR kódot?</h3>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        A QR kódokat PNG formátumban töltheted le, amely kiváló minőségű, veszteségmentes képformátum és minden 
-                        platformon támogatott. A 256x256 pixeles felbontás ideális nyomtatáshoz és 
-                        digitális használathoz egyaránt. A PNG formátum átlátszó hátteret is támogat.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 class="faq-question" itemprop="name">Mennyi ideig működik a QR kód?</h3>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        A statikus QR kódok örökre működnek, nincs lejárati idejük. Amíg a beágyazott 
-                        tartalom (például weboldal URL) elérhető, addig a QR kód is működni fog. Nem használunk 
-                        átirányító szervereket, így a kódok közvetlenül a tartalomra mutatnak.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 class="faq-question" itemprop="name">Biztonságos a QR kód generátor használata?</h3>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Teljes mértékben biztonságos. Az adataid nem kerülnek mentésre a szervereinken, 
-                        a QR kód generálása teljes egészében a böngésződben történik JavaScript segítségével. 
-                        Nem gyűjtünk személyes adatokat, csak anonim statisztikákat Google Analytics segítségével.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 class="faq-question" itemprop="name">Milyen típusú QR kódokat hozhatok létre?</h3>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Sokféle QR kódot készíthetsz: URL/weboldal linkek, egyszerű szöveg, e-mail címek (mailto: link), 
-                        telefonszámok (tel: link), WiFi kapcsolat adatok (SSID, jelszó, titkosítás), és SMS üzenetek 
-                        (telefonszám és előre megírt szöveg). Mindegyik típus a megfelelő szabványos formátumot használja.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h3 class="faq-question" itemprop="name">Működik mobilon is a generátor?</h3>
-                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">
-                        Igen, a QR kód generátorunk teljesen reszponzív és mobilbarát. Működik minden modern okostelefonon 
-                        és táblagépen (iOS, Android), valamint asztali számítógépeken is. Nincs szükség alkalmazás letöltésére, 
-                        minden böngészőből használható.
-                    </p>
-                </div>
-            </div>
-        </section>
+        <!-- Alsó hirdetés -->
+        <div class="ad-container" style="margin-top: 40px;">
+            <span class="ad-label">Hirdetés</span>
+            <!-- Multiplex Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="autorelaxed"
+                 data-ad-client="ca-pub-6527048482135228"
+                 data-ad-slot="3456789012"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
         
         <footer>
             <p>© 2025 Ingyenes QR Kód Generátor - IngyenQR.hu</p>
-            <p>Készíts QR kódot URL-hez, szöveghez, WiFi-hez és még sok máshoz!</p>
+            <p><a href="/privacy.html">Adatvédelmi Nyilatkozat</a> | <a href="/terms.html">Felhasználási Feltételek</a></p>
             <p><small>QR Code® a DENSO WAVE INCORPORATED bejegyzett védjegye</small></p>
         </footer>
     </div>
@@ -737,54 +558,44 @@
                 });
             }
             
-            // Show loading state
-            const btnText = document.getElementById('btn-text');
-            const originalText = btnText.textContent;
-            btnText.innerHTML = '<span class="loading"></span> Generálás...';
-            
             // Clear previous QR code
             document.getElementById('qrcode').innerHTML = '';
             
-            // Generate new QR code with slight delay for loading animation
-            setTimeout(() => {
-                try {
-                    qrCode = new QRCode(document.getElementById('qrcode'), {
-                        text: formattedData,
-                        width: 256,
-                        height: 256,
-                        colorDark: '#000000',
-                        colorLight: '#ffffff',
-                        correctLevel: QRCode.CorrectLevel.H
-                    });
-                    
-                    // Show result section
-                    document.getElementById('result').classList.add('show');
-                    
-                    // Setup download button
-                    setTimeout(() => {
-                        const canvas = document.querySelector('#qrcode canvas');
-                        if (canvas) {
-                            canvas.toBlob((blob) => {
-                                const url = URL.createObjectURL(blob);
-                                document.getElementById('downloadBtn').href = url;
-                            });
-                        }
-                    }, 100);
-                    
-                    // Scroll to result smoothly
-                    document.getElementById('result').scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'center' 
-                    });
-                    
-                } catch (error) {
-                    alert('Hiba történt a QR kód generálása során. Kérlek próbáld újra!');
-                    console.error('QR generation error:', error);
-                }
+            // Generate new QR code
+            try {
+                qrCode = new QRCode(document.getElementById('qrcode'), {
+                    text: formattedData,
+                    width: 256,
+                    height: 256,
+                    colorDark: '#000000',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
                 
-                // Restore button text
-                btnText.textContent = originalText;
-            }, 500);
+                // Show result section
+                document.getElementById('result').classList.add('show');
+                
+                // Setup download button
+                setTimeout(() => {
+                    const canvas = document.querySelector('#qrcode canvas');
+                    if (canvas) {
+                        canvas.toBlob((blob) => {
+                            const url = URL.createObjectURL(blob);
+                            document.getElementById('downloadBtn').href = url;
+                        });
+                    }
+                }, 100);
+                
+                // Scroll to result smoothly
+                document.getElementById('result').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+            } catch (error) {
+                alert('Hiba történt a QR kód generálása során. Kérlek próbáld újra!');
+                console.error('QR generation error:', error);
+            }
         }
         
         // Track download clicks
@@ -822,121 +633,12 @@
         });
     </script>
     
-    <!-- Enhanced Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebApplication",
-                "name": "Ingyenes QR Kód Generátor",
-                "alternateName": "IngyenQR.hu",
-                "description": "Magyar nyelvű ingyenes online QR kód generátor. Készíts QR kódot URL-hez, szöveghez, WiFi-hez, e-mailhez másodpercek alatt.",
-                "url": "https://ingyenqr.hu",
-                "applicationCategory": "UtilityApplication",
-                "operatingSystem": "All",
-                "browserRequirements": "Requires JavaScript. Works in Chrome, Firefox, Safari, Edge",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "HUF",
-                    "availability": "https://schema.org/InStock"
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "ratingCount": "2547",
-                    "bestRating": "5",
-                    "worstRating": "1"
-                },
-                "author": {
-                    "@type": "Organization",
-                    "name": "IngyenQR.hu",
-                    "url": "https://ingyenqr.hu"
-                }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Tényleg ingyenes a QR kód generátor?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Igen, a szolgáltatásunk 100% ingyenes. Nincs rejtett költség, nincs előfizetés, nincs regisztráció, és korlátlan számú QR kódot készíthetsz."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Milyen formátumban tölthetem le a QR kódot?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "A QR kódokat PNG formátumban töltheted le, amely kiváló minőségű, veszteségmentes képformátum és minden platformon támogatott."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Mennyi ideig működik a QR kód?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "A statikus QR kódok örökre működnek, nincs lejárati idejük. Amíg a beágyazott tartalom elérhető, addig a QR kód is működni fog."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Biztonságos a QR kód generátor használata?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Teljes mértékben biztonságos. Az adataid nem kerülnek mentésre a szervereinken, a QR kód generálása teljes egészében a böngésződben történik."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Milyen típusú QR kódokat hozhatok létre?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Sokféle QR kódot készíthetsz: URL/weboldal linkek, egyszerű szöveg, e-mail címek, telefonszámok, WiFi kapcsolat adatok, és SMS üzenetek."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Működik mobilon is a generátor?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Igen, a QR kód generátorunk teljesen reszponzív és mobilbarát. Működik minden modern okostelefonon és táblagépen."
-                        }
-                    }
-                ]
-            },
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Főoldal",
-                        "item": "https://ingyenqr.hu"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "QR Kód Generátor",
-                        "item": "https://ingyenqr.hu"
-                    }
-                ]
-            },
-            {
-                "@type": "Organization",
-                "name": "IngyenQR.hu",
-                "url": "https://ingyenqr.hu",
-                "logo": "https://ingyenqr.hu/logo.png",
-                "sameAs": [
-                    "https://www.facebook.com/ingyenqr",
-                    "https://twitter.com/ingyenqr"
-                ]
-            }
-        ]
-    }
+    <!-- Auto Ads (ha szeretnéd) -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6527048482135228",
+            enable_page_level_ads: true
+        });
     </script>
 </body>
 </html>
