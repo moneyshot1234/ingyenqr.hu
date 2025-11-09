@@ -48,6 +48,43 @@
             line-height: 1.6;
         }
         
+        /* Navigation Menu */
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+        
+        .nav-menu .active {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 2px;
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -292,6 +329,56 @@
             box-shadow: 0 10px 30px rgba(86,171,47,0.4);
         }
         
+        .info-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .info-content {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .info-content ol {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .info-content ol li {
+            margin-bottom: 10px;
+        }
+        
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+        }
+        
         footer {
             text-align: center;
             margin-top: 40px;
@@ -327,10 +414,26 @@
             .features {
                 grid-template-columns: 1fr;
             }
+            
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/" class="active">🏠 Főoldal</a></li>
+            <li><a href="/blog">📝 Blog</a></li>
+            <li><a href="/utmutato">📖 Útmutató</a></li>
+            <li><a href="/gyik">❓ GYIK</a></li>
+            <li><a href="/kapcsolat">📧 Kapcsolat</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <!-- Felső banner hirdetés -->
         <div class="ad-container">
@@ -413,20 +516,6 @@
                 </div>
             </section>
             
-            <!-- Középső hirdetés -->
-            <div class="ad-container">
-                <span class="ad-label">Hirdetés</span>
-                <!-- ingyenqr2 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="autorelaxed"
-                     data-ad-client="ca-pub-6527048482135228"
-                     data-ad-slot="7301717624"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-            
             <button class="generate-btn" onclick="generateQR()" aria-label="QR kód generálása">
                 <span id="btn-text">QR Kód Generálása</span>
             </button>
@@ -445,10 +534,167 @@
             </section>
         </main>
         
+        <!-- Középső hirdetés -->
+        <div class="ad-container" style="margin-top: 40px;">
+            <span class="ad-label">Hirdetés</span>
+            <!-- ingyenqr2 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="autorelaxed"
+                 data-ad-client="ca-pub-6527048482135228"
+                 data-ad-slot="7301717624"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- SEO Content Section -->
+        <section class="info-section">
+            <h2>Mi az a QR kód?</h2>
+            <div class="info-content">
+                A QR kód (Quick Response kód) egy kétdimenziós vonalkód, amely különböző információkat tárolhat. 
+                Eredetileg a japán autóiparban fejlesztették ki 1994-ben a Denso Wave vállalat által, ma már világszerte használják 
+                marketing célokra, kapcsolattartásra, fizetésre és még sok másra. A QR kódok akár 4296 
+                alfanumerikus karaktert is tárolhatnak, így ideálisak URL-ek, szövegek, WiFi jelszavak 
+                és egyéb adatok gyors és egyszerű megosztására. A modern okostelefonok kamerája automatikusan
+                felismeri és beolvassa a QR kódokat, így használatuk rendkívül egyszerű és kényelmes.
+            </div>
+            
+            <h2>Hogyan használd a QR kód generátort?</h2>
+            <div class="info-content">
+                <ol>
+                    <li><strong>Válaszd ki a QR kód típusát:</strong> URL, szöveg, e-mail, telefon, WiFi vagy SMS - minden típushoz optimalizált formátumot biztosítunk</li>
+                    <li><strong>Add meg az adatokat:</strong> Írd be vagy másold be a kívánt tartalmat a szövegmezőbe</li>
+                    <li><strong>Kattints a generálás gombra:</strong> A QR kód azonnal, valós időben készül el a böngésződben</li>
+                    <li><strong>Töltsd le PNG formátumban:</strong> Használd bárhol - nyomtatva, digitálisan, prezentációkban vagy weboldalakon</li>
+                </ol>
+            </div>
+            
+            <h2>Miért válaszd a mi QR generátorunkat?</h2>
+            <div class="info-content">
+                Az ingyenes QR kód generátorunk számos előnnyel rendelkezik a piacon elérhető többi megoldással szemben. 
+                Nincs szükség regisztrációra vagy bejelentkezésre, azonnal használhatod. Korlátlan számú QR kódot készíthetsz 
+                teljesen ingyen, vízjel és reklámok nélkül. A generált QR kódok örökre működnek, nincs lejárati idejük. 
+                Az adataid biztonságban vannak, mivel minden művelet a böngésződben történik, nem töltünk fel semmit szerverekre. 
+                A magyar nyelvű felület egyszerű és intuitív, bárki könnyedén használhatja.
+            </div>
+            
+            <h2>QR kód használati területek</h2>
+            <div class="info-content">
+                <strong>Üzleti felhasználás:</strong> Névjegykártyákon elhelyezve azonnal menthető kontakt információ, 
+                éttermi menük érintésmentes megosztása, termékeken elhelyezve használati útmutató vagy garancia információk.
+                <br><br>
+                <strong>Marketing és reklám:</strong> Plakátokon, szórólapokon közvetlen link a weboldalra vagy akcióra, 
+                social media profilok gyors elérése, esemény regisztráció egyszerűsítése.
+                <br><br>
+                <strong>Oktatás:</strong> Tananyagok gyors megosztása diákokkal, interaktív feladatok és kvízek, 
+                digitális portfoliók és projektek bemutatása.
+                <br><br>
+                <strong>Személyes használat:</strong> WiFi jelszó egyszerű megosztása vendégekkel, 
+                esküvői meghívókon információk és térkép, ajándékokon személyes üzenetek elrejtése.
+            </div>
+        </section>
+        
+        <!-- FAQ Section for SEO -->
+        <section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+            <h2>Gyakran Ismételt Kérdések (GYIK)</h2>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Tényleg ingyenes a QR kód generátor?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Igen, a szolgáltatásunk 100% ingyenes. Nincs rejtett költség, nincs előfizetés, nincs regisztráció, 
+                        és korlátlan számú QR kódot készíthetsz. Nem kérünk bankkártya adatokat, és nem küldünk spam üzeneteket.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Milyen formátumban tölthetem le a QR kódot?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        A QR kódokat PNG formátumban töltheted le, amely kiváló minőségű, veszteségmentes képformátum és minden 
+                        platformon támogatott. A 256x256 pixeles felbontás ideális nyomtatáshoz és 
+                        digitális használathoz egyaránt. A PNG formátum átlátszó hátteret is támogat.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Mennyi ideig működik a QR kód?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        A statikus QR kódok örökre működnek, nincs lejárati idejük. Amíg a beágyazott 
+                        tartalom (például weboldal URL) elérhető, addig a QR kód is működni fog. Nem használunk 
+                        átirányító szervereket, így a kódok közvetlenül a tartalomra mutatnak.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Biztonságos a QR kód generátor használata?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Teljes mértékben biztonságos. Az adataid nem kerülnek mentésre a szervereinken, 
+                        a QR kód generálása teljes egészében a böngésződben történik JavaScript segítségével. 
+                        Nem gyűjtünk személyes adatokat, csak anonim statisztikákat Google Analytics segítségével.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Milyen típusú QR kódokat hozhatok létre?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Sokféle QR kódot készíthetsz: URL/weboldal linkek, egyszerű szöveg, e-mail címek (mailto: link), 
+                        telefonszámok (tel: link), WiFi kapcsolat adatok (SSID, jelszó, titkosítás), és SMS üzenetek 
+                        (telefonszám és előre megírt szöveg). Mindegyik típus a megfelelő szabványos formátumot használja.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Működik mobilon is a generátor?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        Igen, a QR kód generátorunk teljesen reszponzív és mobilbarát. Működik minden modern okostelefonon 
+                        és táblagépen (iOS, Android), valamint asztali számítógépeken is. Nincs szükség alkalmazás letöltésére, 
+                        minden böngészőből használható.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Hogyan olvassak be QR kódot?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        A modern okostelefonok (iPhone iOS 11+, Android 9+) beépített kamerája automatikusan felismeri a QR kódokat. 
+                        Egyszerűen nyisd meg a kamera alkalmazást, irányítsd a QR kódra, és megjelenik egy értesítés a tartalommal. 
+                        Régebbi készülékekhez ingyenes QR olvasó alkalmazásokat találsz az App Store-ban vagy Google Play-en.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 class="faq-question" itemprop="name">Mi a különbség a statikus és dinamikus QR kód között?</h3>
+                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">
+                        A mi generátorunk statikus QR kódokat készít, amelyek közvetlenül tartalmazzák az információt és örökre működnek. 
+                        A dinamikus QR kódok átirányító URL-t használnak, így utólag módosítható a tartalom, de általában fizetősek 
+                        és függnek a szolgáltató szerverétől. Statikus kódok ideálisak állandó információkhoz.
+                    </p>
+                </div>
+            </div>
+        </section>
         
         <footer>
             <p>© 2025 Ingyenes QR Kód Generátor - IngyenQR.hu</p>
-            <p><a href="/privacy.html">Adatvédelmi Nyilatkozat</a> | <a href="/terms.html">Felhasználási Feltételek</a></p>
+            <p>
+                <a href="/privacy.html">Adatvédelmi Nyilatkozat</a> | 
+                <a href="/terms.html">Felhasználási Feltételek</a> | 
+                <a href="/blog">Blog</a> | 
+                <a href="/kapcsolat">Kapcsolat</a>
+            </p>
             <p><small>QR Code® a DENSO WAVE INCORPORATED bejegyzett védjegye</small></p>
         </footer>
     </div>
@@ -619,7 +865,7 @@
         });
     </script>
     
-    <!-- Auto Ads (ha szeretnéd) -->
+    <!-- Auto Ads -->
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-6527048482135228",
