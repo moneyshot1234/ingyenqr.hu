@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyakran Ismételt Kérdések - GYIK | IngyenQR.hu</title>
+    <meta name="description" content="QR kód generátorral kapcsolatos gyakran ismételt kérdések és válaszok. Minden amit tudni szeretnél a QR kódokról.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB05HQRGJN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NB05HQRGJN');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover, .nav-menu .active {
+            color: #667eea;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .category-btn {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .category-btn:hover {
+            background: #e9ecef;
+        }
+        
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        
+        .faq-question:hover {
+            background: #f0f0f0;
+        }
+        
+        .faq-arrow {
+            transition: transform 0.3s;
+            font-size: 1.2em;
+        }
+        
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #666;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        .search-box {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 45px 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        
+        .highlight {
+            background: yellow;
+            padding: 2px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .faq-categories {
+                flex-direction: column;
+            }
+            
+            .category-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">🏠 Főoldal</a></li>
+            <li><a href="/blog">📝 Blog</a></li>
+            <li><a href="/utmutato">📖 Útmutató</a></li>
+            <li><a href="/gyik" class="active">❓ GYIK</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>❓ Gyakran Ismételt Kérdések</h1>
+        
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Keresés a kérdések között..." id="searchInput">
+            <span class="search-icon">🔍</span>
+        </div>
+        
+        <div class="faq-categories">
+            <button class="category-btn active" onclick="filterCategory('all')">Összes</button>
+            <button class="category-btn" onclick="filterCategory('altalanos')">Általános</button>
+            <button class="category-btn" onclick="filterCategory('technikai')">Technikai</button>
+            <button class="category-btn" onclick="filterCategory('hasznalat')">Használat</button>
+            <button class="category-btn" onclick="filterCategory('biztonsag')">Biztonság</button>
+        </div>
+        
+        <div id="faqList">
+            <!-- Általános kérdések -->
+            <div class="faq-item" data-category="altalanos">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Tényleg ingyenes a QR kód generátor?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Igen, a szolgáltatásunk 100% ingyenes. Nincs rejtett költség, nincs előfizetés, nincs regisztráció, 
+                    és korlátlan számú QR kódot készíthetsz. Nem kérünk bankkártya adatokat, és nem küldünk spam üzeneteket.
+                    A szolgáltatás fenntartását hirdetésekből finanszírozzuk.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="altalanos">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Mi az a QR kód?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    A QR kód (Quick Response kód) egy kétdimenziós vonalkód, amely különféle információkat tárolhat.
+                    1994-ben fejlesztette ki a japán Denso Wave vállalat. Akár 4296 alfanumerikus karaktert is
+                    képes tárolni, és ma már a legtöbb okostelefon kamerája automatikusan felismeri.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="altalanos">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Mennyi ideig működik a QR kód?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    A statikus QR kódok örökre működnek, nincs lejárati idejük. Amíg a beágyazott 
+                    tartalom (például weboldal URL) elérhető, addig a QR kód is működni fog. Nem használunk 
+                    átirányító szervereket, így a kódok közvetlenül a tartalomra mutatnak.
+                </div>
+            </div>
+            
+            <!-- Technikai kérdések -->
+            <div class="faq-item" data-category="technikai">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Milyen formátumban tölthetem le a QR kódot?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    A QR kódokat PNG formátumban töltheted le, amely kiváló minőségű, veszteségmentes képformátum és minden 
+                    platformon támogatott. A 256x256 pixeles felbontás ideális nyomtatáshoz és 
+                    digitális használathoz egyaránt. A PNG formátum átlátszó hátteret is támogat.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="technikai">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Mekkora lehet maximum a QR kódba kódolt adat?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    A QR kód kapacitása a tartalomtól függ:
+                    - Numerikus: 7089 karakter
+                    - Alfanumerikus: 4296 karakter
+                    - Bináris: 2953 bájt
+                    - Kanji: 1817 karakter
+                    Minél több adatot tárolsz, annál sűrűbb lesz a QR kód mintázata.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="technikai">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Milyen méretben nyomtassam ki a QR kódot?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Minimum 2x2 cm-es méretet ajánlunk nyomtatáshoz. A méret függ a szkennelési távolságtól is:
+                    - Névjegykártyán: 2-3 cm
+                    - Szórólapon: 3-5 cm
+                    - Plakáton: 10-15 cm
+                    - Óriásplakáton: 50+ cm
+                    A lényeg, hogy tiszta és éles legyen a nyomtatás.
+                </div>
+            </div>
+            
+            <!-- Használati kérdések -->
+            <div class="faq-item" data-category="hasznalat">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Hogyan olvassak be QR kódot?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    A modern okostelefonok (iPhone iOS 11+, Android 9+) beépített kamerája automatikusan felismeri a QR kódokat. 
+                    Egyszerűen nyisd meg a kamera alkalmazást, irányítsd a QR kódra, és megjelenik egy értesítés a tartalommal. 
+                    Régebbi készülékekhez ingyenes QR olvasó alkalmazásokat találsz az App Store-ban vagy Google Play-en.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="hasznalat">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Milyen típusú QR kódokat hozhatok létre?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sokféle QR kódot készíthetsz:
+                    - URL/weboldal linkek
+                    - Egyszerű szöveg
+                    - E-mail címek (mailto: link)
+                    - Telefonszámok (tel: link)
+                    - WiFi kapcsolat adatok (SSID, jelszó, titkosítás)
+                    - SMS üzenetek (telefonszám és előre megírt szöveg)
+                    Mindegyik típus a megfelelő szabványos formátumot használja.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="hasznalat">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Működik mobilon is a generátor?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Igen, a QR kód generátorunk teljesen reszponzív és mobilbarát. Működik minden modern okostelefonon 
+                    és táblagépen (iOS, Android), valamint asztali számítógépeken is. Nincs szükség alkalmazás letöltésére, 
+                    minden böngészőből használható.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="hasznalat">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Hogyan készítsek WiFi QR kódot?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    1. Válaszd ki a WiFi típust a generátorban
+                    2. Add meg az adatokat | karakterrel elválasztva: Hálózat neve|Jelszó|Titkosítás típus
+                    3. Példa: MyWiFi|password123|WPA
+                    4. Generáld le és nyomtasd ki
+                    A vendégeid egyetlen szkennelés után automatikusan csatlakozhatnak a hálózathoz.
+                </div>
+            </div>
+            
+            <!-- Biztonsági kérdések -->
+            <div class="faq-item" data-category="biztonsag">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Biztonságos a QR kód generátor használata?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Teljes mértékben biztonságos. Az adataid nem kerülnek mentésre a szervereinken, 
+                    a QR kód generálása teljes egészében a böngésződben történik JavaScript segítségével. 
+                    Nem gyűjtünk személyes adatokat, csak anonim statisztikákat Google Analytics segítségével.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="biztonsag">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Tárolják valahol az adataimat?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Nem, semmilyen adatot nem tárolunk. A QR kód generálás teljes egészében a te böngésződben történik,
+                    kliens oldali JavaScript kóddal. Az adataid nem hagyják el a számítógépedet vagy telefonodat.
+                    Még mi sem látjuk, hogy milyen QR kódokat készítesz.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="biztonsag">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Hogyan kerülhetem el a rosszindulatú QR kódokat?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Biztonsági tippek QR kódok beolvasásához:
+                    - Csak megbízható forrásból származó QR kódokat olvass be
+                    - Ellenőrizd az URL-t mielőtt rákattintasz
+                    - Használj QR olvasó alkalmazást, ami előnézetet mutat
+                    - Ne add meg személyes adataidat ismeretlen oldalakon
+                    - Legyen naprakész a telefonod biztonsági szoftvere
+                </div>
+            </div>
+            
+            <!-- További kérdések -->
+            <div class="faq-item" data-category="technikai">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Mi a különbség a statikus és dinamikus QR kód között?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    A mi generátorunk statikus QR kódokat készít, amelyek közvetlenül tartalmazzák az információt és örökre működnek. 
+                    A dinamikus QR kódok átirányító URL-t használnak, így utólag módosítható a tartalom, de általában fizetősek 
+                    és függnek a szolgáltató szerverétől. Statikus kódok ideálisak állandó információkhoz.
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="hasznalat">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Tudok színes QR kódot készíteni?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Jelenleg fekete-fehér QR kódokat generálunk, mert ezek a legmegbízhatóbbak és minden eszköz könnyen beolvassa őket.
+                    A letöltött PNG fájlt azonban bármilyen képszerkesztő programban átszínezheted, de ügyelj arra, hogy
+                    megfelelő kontraszt maradjon a háttér és a kód között (minimum 40% különbség).
+                </div>
+            </div>
+            
+            <div class="faq-item" data-category="altalanos">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Kell-e regisztrálnom a használathoz?
+                    <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Nem, nincs szükség regisztrációra vagy bejelentkezésre. A szolgáltatásunk teljesen anonim és azonnal használható.
+                    Egyszerűen látogass el a főoldalra, generáld le a QR kódot és töltsd le. Ennyi!
+                </div>
+            </div>
+        </div>
+        
+        <div class="no-results" id="noResults" style="display: none;">
+            Nincs találat a keresésre. Próbálj más kulcsszóval keresni!
+        </div>
+    </div>
+    
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        function filterCategory(category) {
+            const buttons = document.querySelectorAll('.category-btn');
+            const items = document.querySelectorAll('.faq-item');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        
+        // Keresés funkció
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('.faq-item');
+            let hasResults = false;
+            
+            items.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>

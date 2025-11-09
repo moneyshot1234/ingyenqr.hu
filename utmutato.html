@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Kód Használati Útmutató | IngyenQR.hu</title>
+    <meta name="description" content="Részletes útmutató a QR kód generátor használatához. Lépésről lépésre bemutatjuk, hogyan készíts különböző típusú QR kódokat.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB05HQRGJN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NB05HQRGJN');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 1000px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover, .nav-menu .active {
+            color: #667eea;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            color: #333;
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #555;
+            margin: 20px 0 10px;
+            font-size: 1.3em;
+        }
+        
+        .guide-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .example-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .tip-box {
+            background: #d1ecf1;
+            border: 1px solid #17a2b8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background: #f8d7da;
+            border: 1px solid #dc3545;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .type-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: box-shadow 0.3s;
+        }
+        
+        .type-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .type-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">🏠 Főoldal</a></li>
+            <li><a href="/blog">📝 Blog</a></li>
+            <li><a href="/utmutato" class="active">📖 Útmutató</a></li>
+            <li><a href="/gyik">❓ GYIK</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>📖 Teljes Használati Útmutató</h1>
+        <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 30px;">
+            Minden, amit tudnod kell a QR kód generátor használatáról
+        </p>
+        
+        <div class="guide-section">
+            <h2>🚀 Gyors Kezdés</h2>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Nyisd meg a generátort:</strong> Látogass el a főoldalra
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Válaszd ki a típust:</strong> Kattints a megfelelő ikonra (URL, szöveg, WiFi, stb.)
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Add meg az adatokat:</strong> Írd be a szükséges információkat
+            </div>
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Generáld le:</strong> Kattints a "QR Kód Generálása" gombra
+            </div>
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>Töltsd le:</strong> Kattints a letöltés gombra PNG formátumban
+            </div>
+        </div>
+        
+        <h2>📋 QR Kód Típusok Részletesen</h2>
+        
+        <div class="type-grid">
+            <div class="type-card">
+                <div class="type-icon">🌐</div>
+                <h3>URL / Weboldal</h3>
+                <p>Weboldal linkek QR kóddá alakítása.</p>
+                <div class="example-box">
+                    <strong>Példa:</strong><br>
+                    <code>https://example.com</code><br>
+                    <code>example.com</code> (automatikusan https:// lesz)
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">📝</div>
+                <h3>Szöveg</h3>
+                <p>Bármilyen szöveges információ tárolása.</p>
+                <div class="example-box">
+                    <strong>Példa:</strong><br>
+                    <code>Ez egy egyszerű szöveg</code><br>
+                    <code>Akár több soros is lehet</code>
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">📧</div>
+                <h3>E-mail</h3>
+                <p>E-mail cím megnyitása az alapértelmezett levelezőben.</p>
+                <div class="example-box">
+                    <strong>Példa:</strong><br>
+                    <code>pelda@email.com</code>
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">📱</div>
+                <h3>Telefon</h3>
+                <p>Telefonszám tárcsázása egyetlen kattintással.</p>
+                <div class="example-box">
+                    <strong>Példa:</strong><br>
+                    <code>+36301234567</code><br>
+                    <code>06301234567</code>
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">📶</div>
+                <h3>WiFi</h3>
+                <p>WiFi hálózathoz való automatikus csatlakozás.</p>
+                <div class="example-box">
+                    <strong>Formátum:</strong><br>
+                    <code>Hálózat neve|Jelszó|WPA</code><br>
+                    <strong>Példa:</strong><br>
+                    <code>MyWiFi|password123|WPA</code>
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">💬</div>
+                <h3>SMS</h3>
+                <p>Előre megírt SMS küldése.</p>
+                <div class="example-box">
+                    <strong>Formátum:</strong><br>
+                    <code>Telefonszám|Üzenet</code><br>
+                    <strong>Példa:</strong><br>
+                    <code>+36301234567|Szia! Ez egy teszt üzenet</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="guide-section">
+            <h2>💡 Hasznos Tippek</h2>
+            
+            <div class="tip-box">
+                <strong>🎯 Tipp:</strong> A QR kódok mérete skálázható! A letöltött PNG fájlt bármilyen méretben használhatod nyomtatáshoz vagy digitális felhasználáshoz.
+            </div>
+            
+            <div class="tip-box">
+                <strong>⚡ Gyorsbillentyű:</strong> Használd a <code>Ctrl + Enter</code> kombinációt a QR kód gyors generálásához!
+            </div>
+            
+            <div class="tip-box">
+                <strong>📏 Méretezés:</strong> Nyomtatáshoz minimum 2x2 cm-es méretet használj, hogy könnyen beolvasható legyen.
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Figyelem:</strong> A WiFi QR kódoknál ügyelj arra, hogy a jelszó ne tartalmazzon | karaktert, mert ez az elválasztó!
+            </div>
+        </div>
+        
+        <div class="guide-section">
+            <h2>🎨 Felhasználási Ötletek</h2>
+            
+            <h3>Üzleti célokra</h3>
+            <ul style="margin-left: 20px;">
+                <li>Névjegykártyán elhelyezve - kontakt információk</li>
+                <li>Éttermi asztalon - digitális menü</li>
+                <li>Kirakat matricán - webshop link</li>
+                <li>Termékeken - használati útmutató</li>
+                <li>Számlán - online fizetési lehetőség</li>
+            </ul>
+            
+            <h3>Marketing kampányokhoz</h3>
+            <ul style="margin-left: 20px;">
+                <li>Plakátokon - landing page</li>
+                <li>Szórólapokon - kuponkód</li>
+                <li>Social media - profil link</li>
+                <li>Eseményeken - regisztráció</li>
+                <li>E-mailben - exkluzív tartalom</li>
+            </ul>
+            
+            <h3>Személyes használatra</h3>
+            <ul style="margin-left: 20px;">
+                <li>WiFi jelszó vendégeknek</li>
+                <li>Esküvői meghívón - térkép és információk</li>
+                <li>Ajándékon - személyes üzenet</li>
+                <li>Hűtőn - bevásárlólista</li>
+                <li>Autón - parkolási információ</li>
+            </ul>
+        </div>
+        
+        <div class="guide-section">
+            <h2>❓ Gyakori Problémák és Megoldások</h2>
+            
+            <h3>A QR kód nem olvasható be</h3>
+            <p><strong>Megoldás:</strong> Ellenőrizd, hogy elég nagy-e a kód (minimum 2x2 cm), megfelelő a kontraszt (fekete-fehér), és nincs-e sérült vagy eltorzult.</p>
+            
+            <h3>Túl hosszú az adat</h3>
+            <p><strong>Megoldás:</strong> URL rövidítő szolgáltatást használj hosszú linkekhez, vagy egyszerűsítsd a tartalmat.</p>
+            
+            <h3>Speciális karakterek problémát okoznak</h3>
+            <p><strong>Megoldás:</strong> Kerüld a speciális karaktereket, vagy használj UTF-8 kódolást támogató QR olvasót.</p>
+        </div>
+        
+        <div class="guide-section">
+            <h2>📱 QR Kód Beolvasása</h2>
+            
+            <h3>iPhone (iOS 11+)</h3>
+            <ol style="margin-left: 20px;">
+                <li>Nyisd meg a Kamera alkalmazást</li>
+                <li>Irányítsd a QR kódra</li>
+                <li>Koppints a megjelenő értesítésre</li>
+            </ol>
+            
+            <h3>Android (9.0+)</h3>
+            <ol style="margin-left: 20px;">
+                <li>Nyisd meg a Kamera alkalmazást</li>
+                <li>Irányítsd a QR kódra</li>
+                <li>Koppints a felugró linkre</li>
+            </ol>
+            
+            <div class="tip-box">
+                <strong>💡 Tipp:</strong> Ha nem működik a beépített kamera, töltsd le a Google Lens alkalmazást!
+            </div>
+        </div>
+    </div>
+</body>
+</html>
