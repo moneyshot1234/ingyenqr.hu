@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat - Lépj velünk kapcsolatba | IngyenQR.hu</title>
+    <meta name="description" content="Vedd fel velünk a kapcsolatot! Kérdésed van a QR kód generátorról? Segítünk! Írj nekünk e-mailben vagy töltsd ki kapcsolatfelvételi űrlapunkat.">
+    <meta name="keywords" content="qr kód kapcsolat, ügyfélszolgálat, qr kód segítség, support, kapcsolatfelvétel">
+    <meta name="author" content="IngyenQR.hu - Magyar QR Kód Generátor">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ingyenqr.hu/kapcsolat">
+    <meta property="og:title" content="Kapcsolat - IngyenQR.hu">
+    <meta property="og:description" content="Lépj velünk kapcsolatba! Segítünk a QR kód generátorral kapcsolatos kérdéseidben.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB05HQRGJN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NB05HQRGJN');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover, .nav-menu .active {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .contact-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-form h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+
+        .info-box {
+            background: #d1ecf1;
+            border: 1px solid #17a2b8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #0c5460;
+            line-height: 1.8;
+        }
+
+        .faq-quick {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .faq-quick h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .faq-quick ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .faq-quick li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .faq-quick li:last-child {
+            border-bottom: none;
+        }
+
+        .faq-quick a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .faq-quick a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">🏠 Főoldal</a></li>
+            <li><a href="/blog">📝 Blog</a></li>
+            <li><a href="/utmutato">📖 Útmutató</a></li>
+            <li><a href="/gyik">❓ GYIK</a></li>
+            <li><a href="/kapcsolat" class="active">📧 Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>📧 Kapcsolat</h1>
+        <p class="subtitle">Szívesen válaszolunk minden kérdésedre!</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>E-mail</h3>
+                <p>Írj nekünk bármikor!</p>
+                <a href="mailto:info@ingyenqr.hu">info@ingyenqr.hu</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">⏱️</div>
+                <h3>Válaszidő</h3>
+                <p>Általában 24-48 órán belül válaszolunk</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h3>GYIK</h3>
+                <p>Nézd meg gyakori kérdéseinket!</p>
+                <a href="/gyik">GYIK oldal →</a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>🔍 Mielőtt írsz...</h3>
+            <p>
+                Kérjük, nézd át a <a href="/gyik" style="color: #0c5460; text-decoration: underline;">GYIK oldalt</a>
+                és az <a href="/utmutato" style="color: #0c5460; text-decoration: underline;">Útmutató oldalt</a>,
+                mert valószínűleg ott megtalálod a választ a kérdésedre. Ha továbbra is segítségre van szükséged,
+                ne habozz kapcsolatba lépni velünk!
+            </p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Kapcsolatfelvételi űrlap</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Név *</label>
+                    <input type="text" id="name" name="name" required placeholder="Add meg a neved">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail cím *</label>
+                    <input type="email" id="email" name="email" required placeholder="pelda@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Tárgy *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Miben segíthetünk?">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Üzenet *</label>
+                    <textarea id="message" name="message" required placeholder="Írd le részletesen a kérdésedet vagy problémádat..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">📨 Üzenet küldése</button>
+            </form>
+        </div>
+
+        <div class="faq-quick">
+            <h3>❓ Gyakran feltett kérdések témakörök szerint:</h3>
+            <ul>
+                <li>💰 <a href="/gyik#ingyenes">Tényleg ingyenes a szolgáltatás?</a></li>
+                <li>📥 <a href="/gyik#format">Milyen formátumban tölthetem le a QR kódot?</a></li>
+                <li>⏳ <a href="/gyik#lejarat">Mennyi ideig működik a QR kód?</a></li>
+                <li>🔒 <a href="/gyik#biztonsag">Biztonságos az adataim szempontjából?</a></li>
+                <li>📱 <a href="/gyik#mobil">Működik mobilon is?</a></li>
+            </ul>
+        </div>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #666; font-size: 14px;">
+            <p>© 2025 Ingyenes QR Kód Generátor - IngyenQR.hu</p>
+            <p style="margin-top: 10px;">
+                <a href="/privacy.html" style="color: #667eea; text-decoration: none;">Adatvédelmi Nyilatkozat</a> |
+                <a href="/terms.html" style="color: #667eea; text-decoration: none;">Felhasználási Feltételek</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Kód Használati Példák és Ötletek | IngyenQR.hu</title>
+    <meta name="description" content="QR kód használati példák vállalkozásoknak, eseményekhez, marketinghez. Kreatív ötletek és gyakorlati esettanulmányok QR kódok alkalmazásához.">
+    <meta name="keywords" content="qr kód példák, qr használati esetek, qr marketing példák, qr kód ötletek, qr alkalmazások">
+    <meta name="author" content="IngyenQR.hu - Magyar QR Kód Generátor">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ingyenqr.hu/peldak">
+    <meta property="og:title" content="QR Kód Használati Példák - Kreatív Ötletek">
+    <meta property="og:description" content="Fedezd fel a legjobb QR kód használati példákat vállalkozásoknak és magánszemélyeknek">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB05HQRGJN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NB05HQRGJN');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover, .nav-menu .active {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .category-section {
+            margin: 50px 0;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .category-header h2 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .category-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .example-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .example-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .example-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .example-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .benefit-list li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #56ab2f;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box h4 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+
+        .tip-box p {
+            color: #0c5460;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="/">🏠 Főoldal</a></li>
+            <li><a href="/blog">📝 Blog</a></li>
+            <li><a href="/utmutato">📖 Útmutató</a></li>
+            <li><a href="/gyik">❓ GYIK</a></li>
+            <li><a href="/peldak" class="active">💡 Példák</a></li>
+            <li><a href="/kapcsolat">📧 Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>💡 QR Kód Használati Példák és Ötletek</h1>
+        <p class="subtitle">Fedezd fel, hogyan használhatod a QR kódokat kreatívan a mindennapi életben és üzletben</p>
+
+        <!-- Üzleti használat -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2>🏢 Üzleti Felhasználás</h2>
+                <p>Növeld vállalkozásod hatékonyságát és ügyfélélményt QR kódokkal</p>
+            </div>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-icon">👤</div>
+                    <h3>Digitális Névjegykártya</h3>
+                    <p>Helyezz el QR kódot a névjegykártyádon, ami tartalmazza az összes elérhetőségedet.</p>
+                    <ul class="benefit-list">
+                        <li>Azonnali kontakt mentés</li>
+                        <li>Mindig naprakész információk</li>
+                        <li>Környezetbarát megoldás</li>
+                        <li>Professzionális megjelenés</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🍽️</div>
+                    <h3>Érintésmentes Étlap</h3>
+                    <p>Asztali QR kód, amit a vendégek beszkennelve azonnal láthatják a menüt mobiljukon.</p>
+                    <ul class="benefit-list">
+                        <li>Nincs szükség nyomtatott étlapra</li>
+                        <li>Egyszerű frissítés és módosítás</li>
+                        <li>Higiénikusabb megoldás</li>
+                        <li>Költséghatékony</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">📦</div>
+                    <h3>Termék Információk</h3>
+                    <p>QR kód a terméken, amely használati útmutatóhoz, videókhoz vagy garanciához vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Részletes termékinfó azonnal</li>
+                        <li>Papírspórolás</li>
+                        <li>Videós útmutatók linkje</li>
+                        <li>Ügyfélszolgálati elérhetőségek</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🏪</div>
+                    <h3>Webshop Link Kirakatban</h3>
+                    <p>Matrica a kirakat üvegére QR kóddal, ami közvetlenül a webshopodra vezet.</p>
+                    <ul class="benefit-list">
+                        <li>24/7 vásárlási lehetőség</li>
+                        <li>Offline→Online átvezetés</li>
+                        <li>Nyitvatartási időn túl is értékesít</li>
+                        <li>Mérható konverzió</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🎫</div>
+                    <h3>Rendezvény Regisztráció</h3>
+                    <p>QR kód plakátokon és meghívókon, ami gyors regisztrációs űrlaphoz vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Gyors és egyszerű jelentkezés</li>
+                        <li>Pontos létszám követés</li>
+                        <li>Automatizált adatgyűjtés</li>
+                        <li>Email értesítések küldése</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">⭐</div>
+                    <h3>Értékelések Gyűjtése</h3>
+                    <p>QR kód számlán vagy termékben, ami Google/Facebook értékeléshez vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Több pozitív értékelés</li>
+                        <li>Jobb online jelenlét</li>
+                        <li>Növeli a bizalmat</li>
+                        <li>SEO előnyök</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2>📣 Marketing és Reklám</h2>
+                <p>Interaktív kampányok és mérhetőbb eredmények</p>
+            </div>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-icon">📰</div>
+                    <h3>Plakát és Szórólap Kampány</h3>
+                    <p>QR kód nyomtatott anyagokon, ami landing page-re vagy akcióhoz vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Offline→Online kapcsolat</li>
+                        <li>Mérhető kampány eredmények</li>
+                        <li>Azonnali reakció</li>
+                        <li>Dinamikus tartalom</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">📱</div>
+                    <h3>Social Media Profil Link</h3>
+                    <p>QR kód, ami Instagram, Facebook vagy TikTok profilodra vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Gyors követés növekedés</li>
+                        <li>Egyszerű elérés</li>
+                        <li>Több platform egy kóddal</li>
+                        <li>Eseményeken hatékony</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🎁</div>
+                    <h3>Kuponok és Akciók</h3>
+                    <p>QR kód, ami egyedi kuponkódot vagy akciós oldalt nyit meg.</p>
+                    <ul class="benefit-list">
+                        <li>Exkluzív ajánlatok</li>
+                        <li>Követhető kampány ROI</li>
+                        <li>Vásárlásra ösztönzés</li>
+                        <li>Időkorlátozott akciók</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🎬</div>
+                    <h3>Videó Tartalmak</h3>
+                    <p>QR kód, ami bemutató videókhoz, termékismertetőkhöz vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Gazdagabb tartalomélmény</li>
+                        <li>YouTube nézettség növelés</li>
+                        <li>Interaktív marketing</li>
+                        <li>Jobb megértés</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Személyes használat -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2>👨‍👩‍👧‍👦 Személyes Használat</h2>
+                <p>Kreatív ötletek mindennapi élethez és különleges alkalmakra</p>
+            </div>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-icon">📶</div>
+                    <h3>WiFi Jelszó Megosztás</h3>
+                    <p>QR kód a falon, amit vendégeid beszkennelve automatikusan csatlakoznak.</p>
+                    <ul class="benefit-list">
+                        <li>Nem kell diktálni a jelszót</li>
+                        <li>Biztonságos megosztás</li>
+                        <li>Vendégbarát megoldás</li>
+                        <li>Airbnb-hez tökéletes</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">💍</div>
+                    <h3>Esküvői Meghívó</h3>
+                    <p>QR kód a meghívón, ami a részletes programhoz, térképhez vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Helyszín térkép link</li>
+                        <li>Online visszajelzés</li>
+                        <li>Fotóalbum megosztás</li>
+                        <li>Zenekívánságok gyűjtése</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🎁</div>
+                    <h3>Személyes Üzenetek Ajándékban</h3>
+                    <p>QR kód az ajándékon, ami videó üzenethez vagy fotóalbumhoz vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Egyedi és meglepő</li>
+                        <li>Érzelmes üzenetek</li>
+                        <li>Tartós emlék</li>
+                        <li>Kreatív megoldás</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🚗</div>
+                    <h3>Gépjármű Információk</h3>
+                    <p>QR kód az autóban, ami vészhelyzeti elérhetőségekhez vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Vészhelyzeti kontakt</li>
+                        <li>Parkolási információk</li>
+                        <li>Jármű dokumentumok</li>
+                        <li>Biztosítási adatok</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">📚</div>
+                    <h3>Oktatási Anyagok</h3>
+                    <p>QR kód könyvekben, prezentációkban kiegészítő anyagokhoz.</p>
+                    <ul class="benefit-list">
+                        <li>Digitális tartalom link</li>
+                        <li>Interaktív tanulás</li>
+                        <li>Videós magyarázatok</li>
+                        <li>Letölthető fájlok</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-icon">🏡</div>
+                    <h3>Ingatlan Értékesítés</h3>
+                    <p>QR kód a "Kiadó/Eladó" táblán, ami részletes hirdetéshez vezet.</p>
+                    <ul class="benefit-list">
+                        <li>Azonnali részletes infó</li>
+                        <li>Fotók és alaprajz</li>
+                        <li>Kapcsolatfelvétel</li>
+                        <li>360° virtuális túra</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h4>💡 Profi Tipp: QR Kód Elhelyezése</h4>
+            <p>
+                A QR kód hatékonyságát nagyban befolyásolja az elhelyezése. Gondoskodj róla, hogy:
+                <br>• Jól látható helyen legyen (szem magasságban)
+                <br>• Megfelelő méretű (minimum 2x2 cm)
+                <br>• Tiszta, nem sérült
+                <br>• Egyértelmű CTA (Call-to-Action) kísérje: "Szkenneld be az ajánlatért!"
+                <br>• Teszteld le használat előtt!
+            </p>
+        </div>
+
+        <div class="cta-box">
+            <h3>🚀 Kezdd el most!</h3>
+            <p>Készítsd el első QR kódodat percek alatt, teljesen ingyen, regisztráció nélkül!</p>
+            <a href="/" class="cta-btn">QR Kód Generálása →</a>
+        </div>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #666; font-size: 14px;">
+            <p>© 2025 Ingyenes QR Kód Generátor - IngyenQR.hu</p>
+            <p style="margin-top: 10px;">
+                <a href="/privacy.html" style="color: #667eea; text-decoration: none;">Adatvédelmi Nyilatkozat</a> |
+                <a href="/terms.html" style="color: #667eea; text-decoration: none;">Felhasználási Feltételek</a> |
+                <a href="/kapcsolat" style="color: #667eea; text-decoration: none;">Kapcsolat</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
