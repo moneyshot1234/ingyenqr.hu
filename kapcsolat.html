@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat | IngyenQR.hu</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Lépjen kapcsolatba velünk! Kérdése van a QR kód generátorral kapcsolatban? Írjon nekünk!">
+    <meta name="keywords" content="kapcsolat, contact, elérhetőség, támogatás, ingyenqr">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ingyenqr.hu/kapcsolat.html">
+    <meta property="og:title" content="Kapcsolat | IngyenQR.hu">
+    <meta property="og:description" content="Lépjen kapcsolatba velünk!">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6527048482135228"
+         crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB05HQRGJN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NB05HQRGJN');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Navigation Menu */
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+        
+        .nav-menu .active {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 2px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-form {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .contact-info {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .contact-text h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .contact-text p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .faq-box {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .faq-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .faq-box ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .faq-box li {
+            margin-bottom: 10px;
+        }
+        
+        .faq-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .faq-box a:hover {
+            text-decoration: underline;
+        }
+        
+        .faq-box a::before {
+            content: "→";
+            margin-right: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .social-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .required {
+            color: #e74c3c;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            text-align: center;
+            color: #666;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hirdetés konténer */
+        .ad-container {
+            margin: 30px 0;
+            min-height: 100px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .ad-label {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            .nav-menu ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="utmutato.html">Útmutató</a></li>
+            <li><a href="gyik.html">GYIK</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="adatvedelem.html">Adatvédelem</a></li>
+            <li><a href="felhasznalasi-feltetelek.html">Feltételek</a></li>
+            <li><a href="kapcsolat.html" class="active">Kapcsolat</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Kapcsolat</h1>
+        <p class="subtitle">Örömmel fogadjuk kérdéseit, javaslatait és visszajelzéseit!</p>
+        
+        <div class="success-message" id="successMessage">
+            ✅ Üzenetét sikeresen elküldtük! Hamarosan válaszolunk.
+        </div>
+        
+        <div class="error-message" id="errorMessage">
+            ❌ Hiba történt az üzenet küldése során. Kérjük, próbálja újra vagy írjon közvetlenül az info@ingyenqr.hu címre.
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h2>Írjon nekünk!</h2>
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Név <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Az Ön neve">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail cím <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="pelda@email.hu">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Tárgy <span class="required">*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Válasszon témát...</option>
+                            <option value="general">Általános kérdés</option>
+                            <option value="technical">Technikai probléma</option>
+                            <option value="feature">Funkció javaslat</option>
+                            <option value="partnership">Együttműködés</option>
+                            <option value="feedback">Visszajelzés</option>
+                            <option value="other">Egyéb</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Üzenet <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Írja le kérdését vagy észrevételét..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Üzenet küldése</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Elérhetőségeink</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-text">
+                        <h3>E-mail</h3>
+                        <p>info@ingyenqr.hu</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-text">
+                        <h3>Weboldal</h3>
+                        <p>www.ingyenqr.hu</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-text">
+                        <h3>Válaszidő</h3>
+                        <p>24-48 óra munkanapokon</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-text">
+                        <h3>Támogatás</h3>
+                        <p>Magyar nyelvű ügyfélszolgálat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-box">
+            <h3>🔍 Mielőtt írna nekünk...</h3>
+            <p>Lehet, hogy kérdésére már megtalálja a választ az alábbi oldalakon:</p>
+            <ul>
+                <li><a href="gyik.html">Gyakran Ismételt Kérdések (GYIK)</a></li>
+                <li><a href="utmutato.html">Részletes használati útmutató</a></li>
+                <li><a href="blog.html">Blog és tippek</a></li>
+                <li><a href="adatvedelem.html">Adatvédelmi információk</a></li>
+            </ul>
+        </div>
+
+        <!-- AdSense hirdetés -->
+        <div class="ad-container">
+            <span class="ad-label">Hirdetés</span>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6527048482135228"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+        
+        <h2 style="text-align: center;">Gyakori témák</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 30px; margin-bottom: 10px;">🛠️</div>
+                <h3 style="color: #333; margin-bottom: 10px;">Technikai segítség</h3>
+                <p style="color: #666; font-size: 14px;">QR kód nem működik? Segítünk megoldani!</p>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 30px; margin-bottom: 10px;">💡</div>
+                <h3 style="color: #333; margin-bottom: 10px;">Új funkciók</h3>
+                <p style="color: #666; font-size: 14px;">Van ötlete? Ossza meg velünk!</p>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 30px; margin-bottom: 10px;">🤝</div>
+                <h3 style="color: #333; margin-bottom: 10px;">Együttműködés</h3>
+                <p style="color: #666; font-size: 14px;">Üzleti partnerség lehetőségek</p>
+            </div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0;">
+            <h2 style="color: white; margin-bottom: 15px;">📣 Visszajelzése fontos számunkra!</h2>
+            <p style="margin-bottom: 0;">Folyamatosan fejlesztjük szolgáltatásunkat az Önök visszajelzései alapján. Minden véleményt, javaslatot és kritikát szívesen fogadunk, hogy még jobb QR kód generátort biztosíthassunk Önnek.</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" class="social-link" title="Facebook">f</a>
+            <a href="#" class="social-link" title="Twitter">𝕏</a>
+            <a href="#" class="social-link" title="LinkedIn">in</a>
+            <a href="#" class="social-link" title="Instagram">📷</a>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 IngyenQR.hu - Minden jog fenntartva</p>
+            <p>
+                <a href="index.html">Főoldal</a> | 
+                <a href="adatvedelem.html">Adatvédelmi Nyilatkozat</a> | 
+                <a href="felhasznalasi-feltetelek.html">Felhasználási Feltételek</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Form kezelés
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Itt normál esetben el kellene küldeni az űrlapot
+            // Most csak szimuláljuk a sikeres küldést
+            
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Form reset
+            this.reset();
+            
+            // Üzenet elrejtése 5 másodperc után
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+        
+        // AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adatvédelmi Nyilatkozat | IngyenQR.hu</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="IngyenQR.hu adatvédelmi nyilatkozata. Információk a személyes adatok kezeléséről és védelméről.">
+    <meta name="keywords" content="adatvédelem, privacy policy, gdpr, személyes adatok, ingyenqr">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ingyenqr.hu/adatvedelem.html">
+    <meta property="og:title" content="Adatvédelmi Nyilatkozat | IngyenQR.hu">
+    <meta property="og:description" content="Információk a személyes adatok kezeléséről és védelméről">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6527048482135228"
+         crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB05HQRGJN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NB05HQRGJN');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Navigation Menu */
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+        
+        .nav-menu .active {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 2px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            color: #444;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .content ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .date {
+            text-align: right;
+            color: #666;
+            font-style: italic;
+            margin-top: 30px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            text-align: center;
+            color: #666;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hirdetés konténer */
+        .ad-container {
+            margin: 30px 0;
+            min-height: 100px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .ad-label {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            .nav-menu ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="utmutato.html">Útmutató</a></li>
+            <li><a href="gyik.html">GYIK</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="adatvedelem.html" class="active">Adatvédelem</a></li>
+            <li><a href="felhasznalasi-feltetelek.html">Feltételek</a></li>
+            <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Adatvédelmi Nyilatkozat</h1>
+        <p class="subtitle">Az Ön adatai biztonságban vannak nálunk</p>
+        
+        <div class="content">
+            <h2>1. Bevezetés</h2>
+            <p>
+                Az IngyenQR.hu elkötelezett az Ön személyes adatainak védelme mellett. Ez az adatvédelmi nyilatkozat részletesen ismerteti, hogy milyen információkat gyűjtünk, hogyan használjuk fel azokat, és milyen jogai vannak az adatkezeléssel kapcsolatban.
+            </p>
+            <p>
+                Szolgáltatásunk használatával Ön elfogadja az ebben a dokumentumban leírt adatkezelési gyakorlatokat. Kérjük, figyelmesen olvassa el ezt a nyilatkozatot.
+            </p>
+            
+            <h2>2. Adatkezelő információi</h2>
+            <p>
+                <strong>Weboldal neve:</strong> IngyenQR.hu<br>
+                <strong>Domain:</strong> ingyenqr.hu<br>
+                <strong>E-mail:</strong> info@ingyenqr.hu<br>
+                <strong>Adatkezelés célja:</strong> QR kód generáló szolgáltatás nyújtása
+            </p>
+            
+            <h2>3. Milyen adatokat gyűjtünk?</h2>
+            
+            <h3>3.1 Automatikusan gyűjtött adatok</h3>
+            <ul>
+                <li>IP cím</li>
+                <li>Böngésző típusa és verziója</li>
+                <li>Operációs rendszer</li>
+                <li>Látogatás időpontja</li>
+                <li>Megtekintett oldalak</li>
+                <li>Hivatkozó weboldal (referrer)</li>
+            </ul>
+            
+            <h3>3.2 Ön által megadott adatok</h3>
+            <p>
+                A QR kód generálás során Ön különböző adatokat adhat meg (URL, szöveg, e-mail cím, telefonszám, WiFi adatok stb.). Fontos tudnia:
+            </p>
+            <ul>
+                <li>Ezeket az adatokat NEM tároljuk szervereinken</li>
+                <li>A QR kód generálás teljes egészében a böngészőjében történik</li>
+                <li>A megadott adatok nem kerülnek továbbításra szolgáltatásunk felé</li>
+            </ul>
+            
+            <div class="highlight">
+                <strong>⚠️ Fontos:</strong> A QR kód generálás teljes mértékben kliens oldalon (az Ön eszközén) történik. Ez azt jelenti, hogy a QR kódba kódolt információk soha nem hagyják el az Ön eszközét, és mi nem férünk hozzá ezekhez az adatokhoz.
+            </div>
+            
+            <h2>4. Sütik (Cookie-k) használata</h2>
+            <p>
+                Weboldalunk sütiket használ a felhasználói élmény javítása érdekében. A sütik kis szöveges fájlok, amelyeket az Ön böngészője tárol.
+            </p>
+            
+            <h3>4.1 Használt sütik típusai:</h3>
+            <ul>
+                <li><strong>Munkamenet sütik:</strong> A böngésző bezárásakor automatikusan törlődnek</li>
+                <li><strong>Google Analytics sütik:</strong> Statisztikai célú adatgyűjtés a weboldal használatáról</li>
+                <li><strong>Google AdSense sütik:</strong> Releváns hirdetések megjelenítéséhez</li>
+            </ul>
+            
+            <h3>4.2 Sütik kezelése</h3>
+            <p>
+                Ön bármikor letilthatja vagy törölheti a sütiket böngészője beállításaiban. Felhívjuk figyelmét, hogy a sütik letiltása befolyásolhatja weboldalunk működését.
+            </p>
+
+            <!-- AdSense hirdetés -->
+            <div class="ad-container">
+                <span class="ad-label">Hirdetés</span>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6527048482135228"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+            
+            <h2>5. Google Analytics</h2>
+            <p>
+                Weboldalunk a Google Analytics szolgáltatást használja a látogatói statisztikák gyűjtésére. A Google Analytics sütik segítségével információkat gyűjt arról, hogyan használják a látogatók weboldalunkat.
+            </p>
+            <p>
+                Az összegyűjtött információk közé tartozik:
+            </p>
+            <ul>
+                <li>Látogatók száma</li>
+                <li>Látogatás időtartama</li>
+                <li>Megtekintett oldalak</li>
+                <li>Földrajzi elhelyezkedés (ország/város szintű)</li>
+                <li>Használt eszköz típusa</li>
+            </ul>
+            <p>
+                Ezek az adatok anonimizáltak és kizárólag statisztikai célokra használjuk őket. A Google Analytics adatkezelési gyakorlatáról további információkat a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Adatvédelmi Irányelvei</a> oldalon talál.
+            </p>
+            
+            <h2>6. Google AdSense</h2>
+            <p>
+                Weboldalunkon Google AdSense hirdetések jelennek meg. A Google AdSense sütik segítségével személyre szabott hirdetéseket jeleníthet meg az Ön érdeklődési köre alapján.
+            </p>
+            <p>
+                A hirdetések személyre szabását letilthatja a <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Hirdetési Beállítások</a> oldalon.
+            </p>
+            
+            <h2>7. Adatbiztonság</h2>
+            <p>
+                Elkötelezettek vagyunk az Ön adatainak védelme mellett. Az alábbiakat tesszük az adatok biztonságáért:
+            </p>
+            <ul>
+                <li>SSL/TLS titkosítás használata az adatátvitel során</li>
+                <li>A QR kód generálás kliens oldali feldolgozása</li>
+                <li>Nem tárolunk személyes adatokat szervereinken</li>
+                <li>Rendszeres biztonsági frissítések alkalmazása</li>
+            </ul>
+            
+            <h2>8. Az Ön jogai</h2>
+            <p>
+                Az EU Általános Adatvédelmi Rendelet (GDPR) értelmében Önnek joga van:
+            </p>
+            <ul>
+                <li><strong>Hozzáférés:</strong> Tájékoztatást kérhet a kezelt adatokról</li>
+                <li><strong>Helyesbítés:</strong> Kérheti adatai módosítását</li>
+                <li><strong>Törlés:</strong> Kérheti adatai törlését ("elfeledtetéshez való jog")</li>
+                <li><strong>Korlátozás:</strong> Kérheti az adatkezelés korlátozását</li>
+                <li><strong>Tiltakozás:</strong> Tiltakozhat az adatkezelés ellen</li>
+                <li><strong>Adathordozhatóság:</strong> Kérheti adatai átadását</li>
+            </ul>
+            
+            <h2>9. Harmadik fél szolgáltatások</h2>
+            <p>
+                Weboldalunk az alábbi harmadik fél szolgáltatásokat használja:
+            </p>
+            <ul>
+                <li><strong>Google Analytics:</strong> Weboldal analitika</li>
+                <li><strong>Google AdSense:</strong> Hirdetések megjelenítése</li>
+                <li><strong>CDN szolgáltatások:</strong> JavaScript könyvtárak betöltése (pl. QRCode.js)</li>
+            </ul>
+            <p>
+                Ezen szolgáltatások saját adatvédelmi irányelvekkel rendelkeznek, amelyeket javasolt áttekinteni.
+            </p>
+            
+            <h2>10. Gyermekek adatainak védelme</h2>
+            <p>
+                Szolgáltatásunk nem gyűjt szándékosan 16 év alatti gyermekek személyes adatait. Ha tudomásunkra jut, hogy 16 év alatti gyermektől személyes adatokat gyűjtöttünk, azonnal töröljük azokat.
+            </p>
+            
+            <h2>11. Adatvédelmi nyilatkozat módosítása</h2>
+            <p>
+                Fenntartjuk a jogot, hogy ezt az adatvédelmi nyilatkozatot időről időre módosítsuk. A módosításokról weboldalunkon keresztül tájékoztatjuk Önt. Javasoljuk, hogy rendszeresen tekintse át ezt a dokumentumot.
+            </p>
+            
+            <h2>12. Kapcsolat</h2>
+            <p>
+                Ha bármilyen kérdése van az adatvédelmi nyilatkozatunkkal kapcsolatban, vagy gyakorolni kívánja jogait, kérjük, lépjen kapcsolatba velünk:
+            </p>
+            <p>
+                <strong>E-mail:</strong> info@ingyenqr.hu<br>
+                <strong>Kapcsolat űrlap:</strong> <a href="kapcsolat.html">Kattintson ide</a>
+            </p>
+            
+            <p class="date">Utolsó frissítés: 2024. november 15.</p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 IngyenQR.hu - Minden jog fenntartva</p>
+            <p>
+                <a href="index.html">Főoldal</a> | 
+                <a href="felhasznalasi-feltetelek.html">Felhasználási Feltételek</a> | 
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
